@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausaufgaben 8d</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hausaufgaben 8d</h1>
+    </header>
+    <main>
+        <div class="container">
+            <button id="previous" class="navigation-button">⇦ Frühere HA</button>
+            <div class="homework-box">
+                <p id="homework-content">Bisher noch nichts hinzugefügt</p>
+            </div>
+            <button id="next" class="navigation-button">Spätere HA ⇨</button>
+        </div>
+        <div class="add-homework">
+            <button id="add-button">Hausaufgabe hinzufügen</button>
+        </div>
+        <div class="view-all">
+            <button id="view-all-button">Meine HA oder Lösungen ansehen</button>
+        </div>
+    </main>
+
+    <!-- Popup für neue Hausaufgabe -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Neue Hausaufgabe</h2>
+            <label for="homework-text">Hausaufgabe:</label>
+            <input type="text" id="homework-text" placeholder="Beschreibung der Hausaufgabe...">
+            <label for="subject">Fach:</label>
+            <select id="subject">
+                <option value="Mathematik">Mathematik</option>
+                <option value="Deutsch">Deutsch</option>
+                <option value="Englisch">Englisch</option>
+                <option value="Biologie">Biologie</option>
+                <!-- Weitere Fächer hinzufügen -->
+            </select>
+            <label for="due-date">Fälligkeitsdatum:</label>
+            <input type="date" id="due-date">
+            <div class="popup-buttons">
+                <button id="save-button">Speichern</button>
+                <button id="cancel-button">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup für Lösung hinzufügen/ansehen -->
+    <div id="solution-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Lösung</h2>
+            <textarea id="solution-text" placeholder="Lösung hier eingeben oder ansehen..." rows="5"></textarea>
+            <label for="solution-image">Bild hinzufügen:</label>
+            <input type="file" id="solution-image" accept="image/*">
+            <div class="preview-container" id="image-preview-container">
+                <p id="no-image-text">Kein Bild ausgewählt.</p>
+                <img id="image-preview" class="hidden" alt="Vorschau">
+            </div>
+            <div class="popup-buttons">
+                <button id="save-solution-button">Speichern</button>
+                <button id="delete-solution-button">Löschen</button>
+                <button id="close-solution-button">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup für alle Hausaufgaben anzeigen -->
+    <div id="view-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Alle Hausaufgaben</h2>
+            <ul id="homework-list"></ul>
+            <div class="popup-buttons">
+                <button id="close-view-button">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
